@@ -9,3 +9,13 @@
 	align-items: center;
 	gap: 2px;
 }
+
+@media (max-width: 425px) {
+	.container {
+		width: 100%;
+	}
+
+	.navigation {
+		justify-content: right;
+	}
+}

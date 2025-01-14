@@ -7,7 +7,7 @@ import heartIcon from "../../assets/icons/heart.svg";
 
 export default function Navigation() {
 	return (
-		<nav>
+		<nav className={style.container}>
 			<ul className={style.navigation}>
 				<li>
 					<CustomLink to="/">

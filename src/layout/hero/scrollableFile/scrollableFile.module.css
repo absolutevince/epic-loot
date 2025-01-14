@@ -1,0 +1,37 @@
+@values vars: "../../../styles/variables.modules.css";
+@values dark, dark-2, dark-3, light, light-4 from vars;
+
+.container {
+	padding: 1rem;
+	background-color: dark;
+	height: 30rem;
+}
+
+.scrollable {
+	padding: 1rem;
+	display: grid;
+	gap: 1rem;
+	overflow-y: scroll;
+	height: 100%;
+}
+
+.scrollable>li {
+	background-color: dark-2;
+	height: 7rem;
+}
+
+.scrollable::-webkit-scrollbar {
+	background-color: transparent;
+	width: 6px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+	background-color: light-4;
+}
+
+@media (max-width: 895px) {
+	.scrollable {
+		height: 8rem;
+		border: 1px solid red;
+	}
+}

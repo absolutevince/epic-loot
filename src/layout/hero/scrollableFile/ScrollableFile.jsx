@@ -1,9 +1,15 @@
-export default function ScrollableFile({ data }) {
+import style from "./scrollableFile.module.css";
+
+export default function ScrollableFile({ data, handleChangeItem }) {
 	return (
-		<>
-			{data.map((d, index) => (
-				<div key={index}></div>
-			))}
-		</>
+		<div className={style.container}>
+			<ul className={style.scrollable}>
+				{data.map((d, index) => (
+					<li key={index}>
+						<div onClick={() => handleChangeItem(index)}>{d}</div>
+					</li>
+				))}
+			</ul>
+		</div>
 	);
 }

@@ -1,5 +1,5 @@
 import Hero from "../../layout/hero/Hero.jsx";
-import GameList from "../../layout/hero/GamesList/GameList.jsx";
+import GameList from "../../layout/games-list/GameList.jsx";
 const mockData = [0, 1, 2, 3, 4, 5];
 
 export default function Home() {

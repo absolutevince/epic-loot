@@ -1,7 +1,7 @@
-import SearchInput from "../search-input/SearchInput";
+import SearchInput from "../../components/search-input/SearchInput";
 import style from "./header.module.css";
-import Navigation from "../navigation/Navigation";
-import CustomLink from "../custom-link/CustomLink";
+import Navigation from "../../components/navigation/Navigation";
+
 import Genres from "../../layout/hero/genres/Genres";
 
 export default function Header() {

@@ -42,3 +42,11 @@
 		font-size: 2rem;
 	}
 }
+
+@media (max-width: 425px) {
+	.left {
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+}

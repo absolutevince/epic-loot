@@ -1,0 +1,14 @@
+@values vars: "../../styles/variables.modules.css";
+@values light from vars;
+
+.link {
+	position: relative;
+}
+
+.link:hover::after {
+	content: "";
+	position: absolute;
+	inset: -5px;
+	border: 1px solid light;
+	z-index: 2;
+}

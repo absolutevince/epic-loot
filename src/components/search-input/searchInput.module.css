@@ -1,0 +1,19 @@
+@values vars: "../../styles/variables.modules.css";
+@values dark, dark-2, light from vars;
+
+.container {
+	display: flex;
+}
+
+.search {
+	width: 35ch;
+	border-radius: 5px;
+	border: none;
+	background-color: dark-2;
+	color: light;
+	padding: 0.5em 1em;
+}
+
+.search:focus {
+	background-color: dark;
+}

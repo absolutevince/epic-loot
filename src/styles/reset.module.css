@@ -1,0 +1,46 @@
+@values vars: "./variables.modules.css";
+@values dark-2, dark, dark-3, dark-4, light from vars;
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+@font-face {
+	font-family: "Open-sans";
+	src: url("../assets/fonts/OpenSans-VariableFont_wdth,wght.ttf");
+}
+
+@font-face {
+	font-family: "Sansita Regular";
+	src: url("../assets/fonts/Sansita-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Sansita Bold";
+	src: url("../assets/fonts/Sansita-bold.ttf");
+}
+
+html {
+	font-family: "Open-sans", sans-serif;
+	background-color: dark-4;
+	color: light;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+}
+
+.wrapper {
+	max-width: 1400px;
+	margin: 0 auto;
+}

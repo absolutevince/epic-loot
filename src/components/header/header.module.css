@@ -1,8 +1,12 @@
 .header {
 	padding: 1rem 2rem;
+}
+
+.main {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 2rem;
 }
 
 .logo {
@@ -18,7 +22,7 @@
 }
 
 @media (max-width: 793px) {
-	.header {
+	.main {
 		align-items: start;
 		flex-direction: column;
 		gap: 1rem;
@@ -30,7 +34,7 @@
 }
 
 @media (max-width: 554px) {
-	.header {
+	.main {
 		padding: 1rem;
 	}
 

@@ -34,18 +34,26 @@
 	height: 100%;
 }
 
-.one,
-.three,
-.five,
-.seven {
-	background-color: dark-4;
+.left {
+	position: relative;
 }
 
-.two,
-.four,
-.six,
-.eight {
-	background-color: red-4;
+.carouselSlider {
+	display: flex;
+}
+
+.carouselButtons {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	display: none;
+	justify-content: space-between;
+}
+
+.carouselButtons>button {
+	background-color: transparent;
+	border: none;
 }
 
 @media (max-width: 895px) {
@@ -56,6 +64,10 @@
 
 	.hero>* {
 		height: 20rem;
+	}
+
+	.carouselButtons {
+		display: flex;
 	}
 }
 

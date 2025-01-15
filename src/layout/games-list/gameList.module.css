@@ -1,13 +1,25 @@
 @values vars: "../../styles/variables.modules.css";
-@values dark-2 from vars;
+@values dark-2, light-4 from vars;
 
 .container {
 	padding: 1rem 2rem;
 }
 
+.header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 2rem;
+	gap: 1rem;
+}
+
+.header a {
+	font-size: 0.9rem;
+	color: light-4;
+	text-decoration: underline;
+}
+
 .heading {
 	font-size: 2rem;
-	margin-bottom: 2rem;
 }
 
 .list {
@@ -30,5 +42,14 @@
 @media (max-width: 425px) {
 	.heading {
 		font-size: 1.2rem;
+	}
+
+	.list {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		justify-content: start;
+	}
+
+	.list>* {
+		height: 150px;
 	}
 }

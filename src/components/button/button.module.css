@@ -1,5 +1,5 @@
 @values vars: "../../styles/variables.modules.css";
-@values light, light-2, light-3, dark, dark-2, dark-3 from vars;
+@values light, light-2, light-4, dark, dark-2, dark-3 from vars;
 
 .default {
 	border: none;
@@ -12,4 +12,9 @@
 	composes: default;
 	background: none;
 	color: light;
+}
+
+.lightExtra {
+	composes: default;
+	background-color: light-4;
 }

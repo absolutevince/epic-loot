@@ -40,6 +40,13 @@ a {
 	font-weight: inherit;
 }
 
+button {
+	padding: 0.5em 1em;
+	border: none;
+	background-color: light;
+	cursor: pointer;
+}
+
 .wrapper {
 	max-width: 1400px;
 	margin: 0 auto;

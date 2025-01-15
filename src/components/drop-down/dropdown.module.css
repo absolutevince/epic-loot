@@ -1,0 +1,72 @@
+@values vars: "../../styles/variables.modules.css";
+@values dark-2, dark, dark-4, light-4 from vars;
+
+.container {
+	position: relative;
+}
+
+.select {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.name {
+	font-size: 0.8rem;
+	display: flex;
+	align-items: center;
+}
+
+.name span {
+	rotate: 90deg;
+	transform: translateX(5px);
+}
+
+.value {
+	background-color: dark;
+	padding: 0.5em 1em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+}
+
+.value:hover::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border: 1px solid light-4;
+}
+
+.options {
+	background-color: dark-2;
+	position: absolute;
+	width: 100%;
+	max-height: 500px;
+	overflow-y: scroll;
+	z-index: 5;
+}
+
+.options>div {
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+}
+
+.options>div:hover {
+	background-color: light-4;
+	color: dark-4;
+}
+
+.button {
+	background: transparent;
+	padding: 0;
+}
+
+.iconContainer {
+	transform-origin: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 300ms;
+}

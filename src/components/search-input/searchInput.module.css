@@ -18,6 +18,12 @@
 	background-color: dark;
 }
 
+.searchButton {
+	padding: 0.5em 1em;
+	background-color: transparent;
+	border: none;
+}
+
 @media (max-width: 425px) {
 	.container {
 		width: 100%;

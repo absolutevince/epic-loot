@@ -62,8 +62,8 @@ export default function Carousel({
         }}
       >
         {items.map((d, i) => (
-          <div key={i} style={{ background: d, height: "100%", width: "100%" }}>
-            {d}
+          <div key={i} style={{ height: "100%", width: "100%" }}>
+            {d.name}
           </div>
         ))}
       </div>

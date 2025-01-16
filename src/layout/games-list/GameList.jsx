@@ -13,7 +13,7 @@ export default function GameList({ title, data, fullView = false }) {
       )}
       <ul className={style.list}>
         {data.map((d, i) => (
-          <li key={i}>{d}</li>
+          <li key={i}>{d.name}</li>
         ))}
       </ul>
     </section>

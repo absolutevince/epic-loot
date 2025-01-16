@@ -6,7 +6,7 @@ export default function ScrollableFile({ data, onItemClick }) {
       <ul className={style.scrollable}>
         {data.map((d, index) => (
           <li onClick={() => onItemClick(index)} key={index}>
-            <div>{d}</div>
+            <div>{d.name}</div>
           </li>
         ))}
       </ul>

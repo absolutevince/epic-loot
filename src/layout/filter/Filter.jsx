@@ -9,11 +9,11 @@ const breakpoint = 1036;
 
 export default function Filter() {
   const filtersRef = useRef();
-  const genres = useStaticData("genre");
-  const platforms = useStaticData("platform");
-  const stores = useStaticData("store");
-  const publishers = useStaticData("publisher");
-  const tags = useStaticData("tag");
+  const genres = useStaticData("filters", "genre");
+  const platforms = useStaticData("filters", "platform");
+  const stores = useStaticData("filters", "store");
+  const publishers = useStaticData("filters", "publisher");
+  const tags = useStaticData("filters", "tag");
   const [openFilters, setOpenFilters] = useState(false);
   const { width, height } = useWindowDimension();
   const [filters, setFilters] = useState({
@@ -62,7 +62,7 @@ export default function Filter() {
     setFilters({ ...filters, tag: value });
   };
 
-  const handleFilter = () => { };
+  const handleFilter = () => {};
 
   return (
     <aside className={style.filter}>

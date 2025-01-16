@@ -6,10 +6,10 @@ import chevronLeft from "../../assets/icons/chevron-left-outlined.svg";
 import chevronRight from "../../assets/icons/chevron-right-outlined.svg";
 import Icon from "../../components/icon/Icon.jsx";
 import { useState } from "react";
-
-const mockData = ["#300", "#030", "#003", "#330", "#033"];
+import useStaticData from "../../hooks/useStaticData.jsx";
 
 export default function Hero({ data }) {
+  const mockGames = useStaticData("games", "mockTopFive");
   const { width, height } = useWindowDimension();
   const [moveToIndex, setMoveToIndex] = useState(null);
 
@@ -21,7 +21,7 @@ export default function Hero({ data }) {
     <section className={style.hero}>
       <div className={style.left}>
         <Carousel
-          items={mockData}
+          items={mockGames}
           wrapperClassName={style.carouselWrapper}
           sliderClassName={style.carouselSlider}
           carouselButtonsClassName={style.carouselButtons}
@@ -38,7 +38,7 @@ export default function Hero({ data }) {
         />
       </div>
       {width > 895 && (
-        <ScrollableFile data={mockData} onItemClick={handleMoveToIndex} />
+        <ScrollableFile data={mockGames} onItemClick={handleMoveToIndex} />
       )}
     </section>
   );

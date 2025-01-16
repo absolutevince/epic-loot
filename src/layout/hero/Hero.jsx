@@ -7,8 +7,8 @@ import useStaticData from "../../hooks/useStaticData.jsx";
 import { Icon } from "@iconify/react";
 
 export default function Hero({ data }) {
-  const mockGames = useStaticData("games", "mockTopFive");
-  const { width, height } = useWindowDimension();
+  const mockGames = useStaticData("games", "mockTopFive"); // To be Deleted
+  const { width } = useWindowDimension();
   const [moveToIndex, setMoveToIndex] = useState(null);
 
   const handleMoveToIndex = (index) => {

@@ -3,7 +3,7 @@ import GameList from "../../layout/games-list/GameList.jsx";
 import style from "./wishlist.module.css";
 
 export default function Wishlist() {
-  const mockGames = useStaticData("games", "mockGames");
+  const mockGames = useStaticData("games", "mockGames"); // To be deleted
   return (
     <section className={style.wishlist}>
       <div className={style.heading}>

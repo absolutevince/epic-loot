@@ -1,7 +1,6 @@
 import Button from "../button/Button";
-import Icon from "../icon/Icon";
-import searchIconBold from "../../assets/icons/searchBold.svg";
 import style from "./searchInput.module.css";
+import CustomIcon from "../icon/Icon";
 
 export default function SearchInput() {
   return (
@@ -12,7 +11,7 @@ export default function SearchInput() {
         placeholder="Search for games"
       />
       <Button className={style.searchButton}>
-        <Icon src={searchIconBold} w="20" h="20" />
+        <CustomIcon icon="material-symbols:search" width={25} height={25} />
       </Button>
     </div>
   );

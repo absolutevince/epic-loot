@@ -1,9 +1,6 @@
 import CustomLink from "../custom-link/CustomLink";
-import Icon from "../icon/Icon";
+import CustomIcon from "../icon/Icon";
 import style from "./navigation.module.css";
-import homeIcon from "../../assets/icons/home.svg";
-import shopIcon from "../../assets/icons/shop.svg";
-import heartIcon from "../../assets/icons/heart.svg";
 
 export default function Navigation() {
 	return (
@@ -11,20 +8,20 @@ export default function Navigation() {
 			<ul className={style.navigation}>
 				<li>
 					<CustomLink to="/">
-						<Icon src={homeIcon} w="20" h="20" />
+						<CustomIcon icon="material-symbols:home-rounded" />
 						<span>Home</span>
 					</CustomLink>
 				</li>
 				<li>
 					<CustomLink to="/shop">
-						<Icon src={shopIcon} w="20" h="20" />
+						<CustomIcon icon="material-symbols:shop-rounded" />
 						<span>Shop</span>
 					</CustomLink>
 				</li>
 
 				<li>
 					<CustomLink to="/wishlist">
-						<Icon src={heartIcon} w="20" h="20" />
+						<CustomIcon icon="material-symbols:bookmark-heart-rounded" />
 						<span>Wishlist</span>
 					</CustomLink>
 				</li>

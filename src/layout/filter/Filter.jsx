@@ -4,6 +4,7 @@ import Dropdown from "../../components/drop-down/Dropdown.jsx";
 import style from "./filter.module.css";
 import useStaticData from "../../hooks/useStaticData.jsx";
 import useWindowDimension from "../../hooks/useWindowDimension.jsx";
+import { Icon } from "@iconify/react";
 
 const breakpoint = 1036;
 
@@ -62,12 +63,18 @@ export default function Filter() {
     setFilters({ ...filters, tag: value });
   };
 
-  const handleFilter = () => {};
+  const handleFilter = () => { };
 
   return (
     <aside className={style.filter}>
       {width <= breakpoint && (
-        <Button onClick={handleOpenFilter}>Filters</Button>
+        <Button onClick={handleOpenFilter}>
+          <Icon
+            icon="material-symbols:filter-alt-sharp"
+            width={30}
+            height={30}
+          />
+        </Button>
       )}
       <div ref={filtersRef} className={style.list}>
         <Dropdown

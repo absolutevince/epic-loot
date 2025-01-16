@@ -2,11 +2,9 @@ import ScrollableFile from "./scrollableFile/ScrollableFile.jsx";
 import style from "./hero.module.css";
 import useWindowDimension from "../../hooks/useWindowDimension.jsx";
 import Carousel from "../carousel/Carousel.jsx";
-import chevronLeft from "../../assets/icons/chevron-left-outlined.svg";
-import chevronRight from "../../assets/icons/chevron-right-outlined.svg";
-import Icon from "../../components/icon/Icon.jsx";
 import { useState } from "react";
 import useStaticData from "../../hooks/useStaticData.jsx";
+import { Icon } from "@iconify/react";
 
 export default function Hero({ data }) {
   const mockGames = useStaticData("games", "mockTopFive");
@@ -26,10 +24,20 @@ export default function Hero({ data }) {
           sliderClassName={style.carouselSlider}
           carouselButtonsClassName={style.carouselButtons}
           leftButtonChildren={
-            <Icon src={chevronLeft} alt="Slide Left" w="45" h="45" />
+            <Icon
+              icon="material-symbols:chevron-left"
+              width={45}
+              height={45}
+              className={style.icon}
+            />
           }
           rightButtonChildren={
-            <Icon src={chevronRight} alt="Slide Right" w="45" h="45" />
+            <Icon
+              icon="material-symbols:chevron-right-rounded"
+              width={45}
+              height={45}
+              className={style.icon}
+            />
           }
           w={"100%"}
           h={"100%"}

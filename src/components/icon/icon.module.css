@@ -1,0 +1,6 @@
+@values vars: "../../styles/variables.modules.css";
+@values light-4 from vars;
+
+.light {
+	color: light-4;
+}

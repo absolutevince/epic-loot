@@ -37,19 +37,23 @@
 	.list {
 		justify-content: center;
 	}
+
+	.container {
+		padding: 1rem 0.5rem;
+	}
 }
 
-@media (max-width: 425px) {
+@media (max-width: 490px) {
 	.heading {
 		font-size: 1.2rem;
 	}
 
 	.list {
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(7rem, 15%));
 		justify-content: start;
 	}
 
 	.list>* {
-		height: 150px;
+		height: 10rem;
 	}
 }

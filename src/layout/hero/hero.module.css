@@ -71,8 +71,21 @@
 	}
 }
 
+@media (max-width: 462px) {
+	.hero {
+		padding: 1rem 0.5rem;
+	}
+}
+
 @media (max-width: 425px) {
 	.hero>* {
 		height: 15rem;
+	}
+}
+
+@media (max-width: 320px) {
+	.hero {
+		padding: 1rem 0;
+		background-color: dark;
 	}
 }

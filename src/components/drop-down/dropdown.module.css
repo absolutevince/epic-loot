@@ -3,6 +3,7 @@
 
 .container {
 	position: relative;
+	width: 100%;
 }
 
 .select {
@@ -58,6 +59,7 @@
 	color: dark-4;
 }
 
+/** Arrow Icon*/
 .button {
 	background: transparent;
 	padding: 0;
@@ -68,5 +70,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: transform 300ms;
+	transition: transform 100ms;
+}
+
+@media (max-width: 684px) {
+	.value {
+		font-size: 0.8rem;
+	}
 }

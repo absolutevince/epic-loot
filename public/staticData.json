@@ -71,5 +71,40 @@
     "Jaguar",
     "Game Gear",
     "Neo Geo"
+  ],
+  "publisher": [
+    "Electronic Arts",
+    "Square Enix",
+    "Ubisoft",
+    "Microsoft Studio",
+    "SEGA",
+    "Valve",
+    "Bethesda Softworks",
+    "2K Games",
+    "Capcom"
+  ],
+  "tag": [
+    "Single Player",
+    "Steam Achievments",
+    "Multiplayer",
+    "Full controller support",
+    "Steam Cloud",
+    "Atmospheric",
+    "Steam Trading-Cards",
+    "Great Soundtrack",
+    "RPG",
+    "Co-op"
+  ],
+  "store": [
+    "Steam",
+    "PlayStation",
+    "Xbox Store",
+    "App Store",
+    "GOG",
+    "Nintendo Store",
+    "Xbox 360 Store",
+    "Google Play",
+    "itch.io",
+    "Epic Games"
   ]
 }

@@ -4,10 +4,20 @@
 	grid-template-columns: 1fr 3fr;
 }
 
+@media (max-width: 1036px) {
+	.shop {
+		grid-template-columns: 1fr;
+	}
+}
+
 @media (max-width: 890px) {
 	.shop {
 		grid-template-columns: 1fr;
 	}
 }
 
-@media (max-width: 793px) {}
+@media (max-width: 490px) {
+	.shop {
+		padding: 1rem 0.5rem;
+	}
+}

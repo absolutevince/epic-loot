@@ -28,11 +28,6 @@
 	gap: 0.5rem;
 }
 
-.list>* {
-	height: 250px;
-	background-color: dark-2;
-}
-
 @media (max-width: 814px) {
 	.list {
 		justify-content: center;

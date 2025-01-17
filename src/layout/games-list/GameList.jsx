@@ -1,3 +1,4 @@
+import Card from "../../components/card/Card.jsx";
 import CustomLink from "../../components/custom-link/CustomLink.jsx";
 
 import style from "./gameList.module.css";
@@ -13,7 +14,9 @@ export default function GameList({ title, data, fullView = false }) {
       )}
       <ul className={style.list}>
         {data.map((d, i) => (
-          <li key={i}>{d.name}</li>
+          <li key={i}>
+            <Card data={d} />
+          </li>
         ))}
       </ul>
     </section>

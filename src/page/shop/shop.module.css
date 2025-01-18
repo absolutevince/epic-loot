@@ -1,29 +1,34 @@
+@values vars: "../../styles/variables.modules.css";
+@values dark-3 from vars;
+
 .shop {
-	padding: 1rem 2rem;
-	display: grid;
-	grid-template-columns: 1fr 3fr;
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 }
 
 .buttons {
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: dark-3;
+  padding: 1rem;
 }
 
 @media (max-width: 1036px) {
-	.shop {
-		grid-template-columns: 1fr;
-	}
+  .shop {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 890px) {
-	.shop {
-		grid-template-columns: 1fr;
-	}
+  .shop {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 490px) {
-	.shop {
-		padding: 1rem 0.5rem;
-	}
+  .shop {
+    padding: 1rem 0.5rem;
+  }
 }

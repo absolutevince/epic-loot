@@ -2,29 +2,35 @@
 @values light-4, dark-2, dark-3 from vars;
 
 .card {
-	--radius: 0.3rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 250px;
-	gap: 0.5rem;
-	background-color: dark-3;
-	border-radius: var(--radius);
+  --radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+  gap: 0.5rem;
+  background-color: dark-3;
+  border-radius: var(--radius);
+  transition: scale 100ms ease-out;
+  cursor: pointer;
 }
 
-.card>* {
-	background-color: dark-2;
-	padding: 0.5rem;
-	border-radius: var(--radius);
+.card:hover {
+  scale: 1.05;
+}
+
+.card > * {
+  background-color: dark-2;
+  padding: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .imageContainer img {
-	aspect-ratio: 1;
-	object-fit: cover;
-	max-width: 100%;
-	height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
 }
 
 .info {
-	height: 100%;
+  height: 100%;
 }

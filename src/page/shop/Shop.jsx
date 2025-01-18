@@ -5,48 +5,75 @@ import { fetchGames, fetchGamesByPage } from "../../utils/fetchGamesUtils.js";
 import style from "./shop.module.css";
 import Button from "../../components/button/Button.jsx";
 
+const prevString = "previous";
+
 export default function Shop() {
-  const [gameData, setGameData] = useState({
-    data: null,
-    isLoading: true,
-    error: null,
+  const [pagesData, setPagesData] = useState({
+    current: null,
+    next: null,
+    prev: null,
   });
-  const [currentPage, setCurrentPage] = useState(1);
+  const [pageNum, setPageNum] = useState(1);
+  const [prevPageNum, setPrevPageNum] = useState(1);
 
   useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-    async function f() {
-      const data = await fetchGamesByPage(currentPage, { signal });
-      setGameData(data);
-    }
-    f();
-
-    return () => controller.abort();
-  }, [currentPage]);
+    (async () => {
+      if (pageNum === 1) {
+        const current = await f(pageNum);
+        const next = await f(pageNum + 1);
+        setPagesData({ current, next, prev: null });
+      } else if (pageNum > prevPageNum) {
+        const newCurrent = pagesData.next;
+        const newPrev = pagesData.current;
+        const newNext = await f(pageNum + 1);
+        setPagesData({ current: newCurrent, next: newNext, prev: newPrev });
+      } else if (pageNum < prevPageNum) {
+        const newCurrent = pagesData.prev;
+        const newPrev = await f(pageNum - 1);
+        const newNext = pagesData.current;
+        setPagesData({ current: newCurrent, next: newNext, prev: newPrev });
+      }
+      async function f(pageNumber) {
+        return await fetchGamesByPage(pageNumber);
+      }
+    })();
+  }, [pageNum]);
 
   const handleChangePage = (dest) => {
-    if (dest === "previous") {
-      if (currentPage === 1) return;
-      setCurrentPage(currentPage - 1);
+    if (dest === prevString) {
+      if (pageNum === 1) return;
+      setPageNum(pageNum - 1);
     } else {
-      setCurrentPage(currentPage + 1);
+      setPageNum(pageNum + 1);
     }
+    setPrevPageNum(pageNum);
   };
+
+  console.log({
+    current: pagesData.current,
+    next: pagesData.next,
+    prev: pagesData.prev,
+  });
+  console.log({
+    pageNum,
+    prevPageNum,
+  });
 
   return (
     <main className={style.shop}>
       <div className={style.left}>
         <Filter />
       </div>
-      <div className={style.right}>
-        {!gameData.isLoading && (
-          <GameList data={gameData.games.results} fullView={true} />
-        )}
-      </div>
       <div>
-        <Button onClick={() => handleChangePage()}>Next</Button>
-        <Button onClick={() => handleChangePage("previous")}>Previous</Button>
+        <div className={style.right}>
+          {pagesData.current && (
+            <GameList data={pagesData.current.games.results} fullView={true} />
+          )}
+        </div>
+        <div className={style.buttons}>
+          <Button onClick={() => handleChangePage(prevString)}>Previous</Button>
+          <Button onClick={() => handleChangePage()}>Next</Button>
+        </div>
       </div>
     </main>
   );

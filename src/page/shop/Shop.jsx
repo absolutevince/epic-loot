@@ -17,26 +17,28 @@ export default function Shop() {
   const [prevPageNum, setPrevPageNum] = useState(1);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
     (async () => {
       if (pageNum === 1) {
-        const current = await f(pageNum);
-        const next = await f(pageNum + 1);
+        const current = await fetchGamesByPage(pageNum, { signal });
+        const next = await fetchGamesByPage(pageNum + 1, { signal });
         setPagesData({ current, next, prev: null });
       } else if (pageNum > prevPageNum) {
         const newCurrent = pagesData.next;
         const newPrev = pagesData.current;
-        const newNext = await f(pageNum + 1);
+        const newNext = await fetchGamesByPage(pageNum + 1, { signal });
+
         setPagesData({ current: newCurrent, next: newNext, prev: newPrev });
       } else if (pageNum < prevPageNum) {
         const newCurrent = pagesData.prev;
-        const newPrev = await f(pageNum - 1);
+        const newPrev = await fetchGamesByPage(pageNum - 1, { signal });
         const newNext = pagesData.current;
         setPagesData({ current: newCurrent, next: newNext, prev: newPrev });
       }
-      async function f(pageNumber) {
-        return await fetchGamesByPage(pageNumber);
-      }
     })();
+
+    return () => controller.abort();
   }, [pageNum]);
 
   const handleChangePage = (dest) => {
@@ -49,16 +51,6 @@ export default function Shop() {
     setPrevPageNum(pageNum);
   };
 
-  console.log({
-    current: pagesData.current,
-    next: pagesData.next,
-    prev: pagesData.prev,
-  });
-  console.log({
-    pageNum,
-    prevPageNum,
-  });
-
   return (
     <main className={style.shop}>
       <div className={style.left}>
@@ -67,7 +59,7 @@ export default function Shop() {
       <div>
         <div className={style.right}>
           {pagesData.current && (
-            <GameList data={pagesData.current.games.results} fullView={true} />
+            <GameList data={pagesData.current.data.results} fullView={true} />
           )}
         </div>
         <div className={style.buttons}>

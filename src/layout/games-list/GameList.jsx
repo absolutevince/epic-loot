@@ -4,6 +4,7 @@ import CustomLink from "../../components/custom-link/CustomLink.jsx";
 import style from "./gameList.module.css";
 
 export default function GameList({ title, data, fullView = false }) {
+  console.log(data);
   return (
     <section className={style.container}>
       {!fullView && (

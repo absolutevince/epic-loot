@@ -1,8 +1,9 @@
-import { dataToCard } from "../../utils/dataToCard";
+import { dataToCard } from "../../utils/formatData";
 import CustomLink from "../custom-link/CustomLink";
 import style from "./card.module.css";
 
 export default function Card({ data }) {
+	console.log(data);
 	const game = dataToCard(data);
 
 	return (

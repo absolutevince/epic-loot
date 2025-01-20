@@ -47,8 +47,4 @@
 		grid-template-columns: repeat(auto-fill, minmax(7rem, 15%));
 		justify-content: start;
 	}
-
-	.list>* {
-		height: 10rem;
-	}
 }

@@ -11,6 +11,7 @@ export default function Carousel({
   h,
   direction,
   moveToIndex,
+  children,
 }) {
   const sliderRef = useRef();
   const wrapperRef = useRef();
@@ -59,13 +60,11 @@ export default function Carousel({
           height:
             direction === "vertical" ? `calc(${h} * ${items.length})` : `${h}`,
           transition: " transform 300ms",
+          display: "flex",
+          flexDirection: `${direction === "horizontal" ? "row" : "column"}`,
         }}
       >
-        {items.map((d, i) => (
-          <div key={i} style={{ height: "100%", width: "100%" }}>
-            {d.name}
-          </div>
-        ))}
+        {children}
       </div>
       <div className={carouselButtonsClassName}>
         <button onClick={() => move("left")}>{leftButtonChildren}</button>
